@@ -1,6 +1,7 @@
 services:
   next-app:
     container_name: next-app
+    pull_policy: build
     build:
       context: ./next-app
       dockerfile: prod-without-multistage.Dockerfile
