@@ -1,6 +1,6 @@
 # syntax=docker.io/docker/dockerfile:1
 
-FROM node:20-alpine
+FROM node:lts-alpine
 
 WORKDIR /app
 
@@ -17,6 +17,7 @@ RUN \
 
 COPY src ./src
 COPY public ./public
+COPY postcss.config.mjs .
 COPY next.config.js .
 COPY tsconfig.json .
 

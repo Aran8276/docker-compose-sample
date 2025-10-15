@@ -1,6 +1,6 @@
 # syntax=docker.io/docker/dockerfile:1
 
-FROM node:20-alpine AS base
+FROM node:lts-alpine AS base
 
 # Step 1. Rebuild the source code only when needed
 FROM base AS builder
@@ -20,7 +20,8 @@ RUN \
 
 COPY src ./src
 COPY public ./public
-COPY next.config.js .
+COPY postcss.config.mjs .
+COPY next.config.ts .
 COPY tsconfig.json .
 
 # Environment variables must be present at build time

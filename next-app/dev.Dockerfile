@@ -1,6 +1,6 @@
 # syntax=docker.io/docker/dockerfile:1
 
-FROM node:20-alpine
+FROM node:lts-alpine
 
 WORKDIR /app
 
@@ -16,7 +16,8 @@ RUN \
 
 COPY src ./src
 COPY public ./public
-COPY next.config.js .
+COPY postcss.config.mjs .
+COPY next.config.ts .
 COPY tsconfig.json .
 
 # Next.js collects completely anonymous telemetry data about general usage. Learn more here: https://nextjs.org/telemetry
